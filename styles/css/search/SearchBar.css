@@ -7,6 +7,14 @@
 		margin: 0px;
 	}
 
+	& .btn {
+		height: 38px;
+	}
+
+	& .dropdown-menu {
+		z-index: 2000;
+	}
+
 	& .glyphicon {
 		line-height: 42px;
 		font-size: 26px;

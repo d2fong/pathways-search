@@ -2,6 +2,7 @@ import React from 'react';
 import {Col, FormGroup, InputGroup, FormControl, Button, Modal, Glyphicon} from 'react-bootstrap';
 import {SearchOptions} from './SearchOptions.jsx';
 import {HelpTooltip} from './../../components/HelpTooltip.jsx';
+import {SearchEngine} from './SearchEngine.jsx';
 
 // SearchBar
 // Prop Dependencies ::
@@ -32,8 +33,8 @@ export class SearchBar extends React.Component {
 		}
 	}
 
-	onChange(e) {
-		this.setState({q: e.target.value});
+	onChange(queryString) {
+		this.setState({q: queryString});
 	}
 
 	toggleFilterMenu(state) {
@@ -48,7 +49,7 @@ export class SearchBar extends React.Component {
 				<Col xs={10} sm={11}>
 					<FormGroup>
 						<InputGroup>
-							<FormControl type="text" defaultValue={this.props.query.q} placeholder="Search pathway by name, a list of gene names or type a URI" onChange={(e) => this.onChange(e)} onKeyPress={(e) => this.submit(e)}/>
+							<SearchEngine placeholder="Search pathway by name, a list of gene names or type a URI" onChange={(e) => this.onChange(e)}/>
 							<InputGroup.Button>
 								<Button onClick={() => this.updateTerm()}>Search</Button>
 							</InputGroup.Button>
